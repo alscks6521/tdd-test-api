@@ -15,6 +15,7 @@ import org.junit.jupiter.api.DisplayName
 
 @SpringBootTest
 class UserSpec {
+    // TODO 스몰테스트 유진
 
     private val faker = Faker()
 

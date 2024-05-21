@@ -13,6 +13,7 @@ class UserService(
     private val userRepository: UserRepository,
     private val redisTemplate: StringRedisTemplate // Redis 템플릿 추가
 ) {
+    //TODO 유진 - 비밀번호 검증 로직 구현
     fun registerUser(username: String, password: String): UserDto {
         userRepository.findByUsername(username)?.let {
             throw IllegalStateException("Username already exists")
