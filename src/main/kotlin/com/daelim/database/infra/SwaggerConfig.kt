@@ -29,4 +29,11 @@ class SwaggerConfig {
                 )
             )
     }
+//@Bean
+//fun api(): GroupedOpenApi {
+//    return GroupedOpenApi.builder()
+//        .group("user-api")
+//        .pathsToMatch("/users/**")
+//        .build()
+//}
 }

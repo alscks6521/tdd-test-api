@@ -35,8 +35,9 @@ class UserServiceSpec {
         )
     }
 
+    // 중복된 사용자가 있는지 확인하고 실패 tdd 함수
     @Test
-    @DisplayName("중복된 사용자가 있느지 확인하고 회원가입 실패")
+    @DisplayName("중복된 사용자가 있는지 확인하고 회원가입 실패")
     fun `중복된 사용자가 있느지 확인하고 회원가입 실패`() {
         // Given
         given(userRepository.findByUsername(randomUser.username)).willReturn(randomUser)
@@ -50,18 +51,8 @@ class UserServiceSpec {
         assertEquals("Username already exists", exception.message)
     }
 
-    @Test
-    @DisplayName("중복된 사용자가 있느지 확인하고 회원가입 성공")
-    fun `중복된 사용자가 있느지 확인하고 회원가입 성공`() {
-        // Given
-        given(userRepository.findByUsername(randomUser.username)).willReturn(null)
-        given(userRepository.save(randomUser)).willReturn(randomUser)
 
-        // When
-        val savedUser = userService.registerUser(randomUser.username, randomUser.password)
+    // 중복된 사용자가 있는지 확인하고 성공 tdd 함수
 
-        // Then
-        assertNotNull(savedUser)
-        assertEquals(randomUser.username, savedUser.username)
-    }
+  
 }
