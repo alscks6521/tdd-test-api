@@ -1,3 +1,4 @@
+### jira cet-176 https://daelim-univ.atlassian.net/browse/CET-176
 - 브렌치
 
 new branch from main
